@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  degree: MyString
+  college: MyString
+  location: MyString
+  yop: MyString
+  gpa: 1.5
+
+two:
+  degree: MyString
+  college: MyString
+  location: MyString
+  yop: MyString
+  gpa: 1.5

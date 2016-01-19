@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+
+  # Overriding the devise controller with custom fields
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
+  # Route to user's dashboard
+  get '/:username/dashboard' => 'user#dashboard', as: 'user_dashboard'
+
+  # Routes to completing user's profile
+  get '/:name/dashboard/profile' => 'basic#new', as: 'profile'
+  post '/:name/dashboard/profile' => 'basic#create', as: 'profile_form_post'
+
+  # Routes to edit user's profile
+  get '/:name/dashboard/edit_profile' => 'basic#edit', as: 'edit'
+  patch '/:name/dashboard/edit_profile' => 'basic#update', as: 'edit_profile_post'
+
+  devise_scope :user do
+    authenticated :user do
+      root :to => 'user#index'
+    end
+    unauthenticated :user do
+      root :to => 'devise/registrations#new', as: :unauthenticated_root
+    end
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
