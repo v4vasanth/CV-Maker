@@ -9,4 +9,6 @@ class Basic < ActiveRecord::Base
    	accepts_nested_attributes_for :projects, reject_if: :all_blank, allow_destroy: true
    	accepts_nested_attributes_for :skills, reject_if: :all_blank, allow_destroy: true
 
+   	validates :full_name, presence: true
+      validates :phone, format: { with: /\A(\+91\ ?)?\d{10}\z/ }, presence: true
 end

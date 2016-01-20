@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   	devise :database_authenticatable, :registerable,
     	:recoverable, :rememberable, :trackable, :validatable
    	has_one :basic, dependent: :delete
-   	validates :username, uniqueness: { case_sensitive: true }
+   	validates :username, presence: true, uniqueness: { case_sensitive: true }
 end

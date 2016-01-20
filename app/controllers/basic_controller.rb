@@ -10,6 +10,7 @@ class BasicController < ApplicationController
 
 		if @basic.save
 			if current_user
+				flash[:notice] = "Profile successfully created"
 				redirect_to user_dashboard_path(current_user.username)
 			else
 				redirect_to root_path
@@ -30,6 +31,7 @@ class BasicController < ApplicationController
 	def update
 		@basic = current_user.basic
 		if @basic.update(basic_params)
+			flash[:notice] = "Update successfully created"
     		redirect_to user_dashboard_path(current_user.username)
     	else
       		render 'edit'
