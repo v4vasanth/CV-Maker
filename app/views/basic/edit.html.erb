@@ -2,50 +2,70 @@
     <h2><%= link_to("Dashboard", user_dashboard_path(current_user.username), class: 'btn btn-primary') %></h2>
     <h3>Basic Information</h3>
     <%= simple_form_for @basic, url: { action: 'update' } do |f| %>
-    		<%= f.input :full_name %>
-        	<%= f.input :phone %>
-        	<%= f.input :linkedin %>
-            <%= f.input :twitter %>
-            <%= f.input :skype %>
-            <%= f.input :personal_website %>
+    		<div class="jumbotron">
+                <div class="container">
+                    <%= f.input :full_name %>
+                    <%= f.input :phone %>
+                    <%= f.input :linkedin %>
+                    <%= f.input :twitter %>
+                    <%= f.input :skype %>
+                    <%= f.input :personal_website %>
+                </div>      
+            </div>
         
         <h3>Education</h3>
-        <div id="education">
-            <%= f.simple_fields_for :educations do |education| %>
-                <%= render 'education_fields', f: education %>
-            <% end %>
-            <div class="links">
-                <%= link_to_add_association 'add_education', f, :educations %>  
+        <div class="jumbotron">
+            <div class="container">
+                <div id="education">
+                    <%= f.simple_fields_for :educations do |education| %>
+                        <%= render 'education_fields', f: education %>
+                    <% end %>
+                    <div class="links">
+                        <%= link_to_add_association 'add_education', f, :educations %>  
+                    </div>
+                </div>
             </div>
         </div>
 
         <h3>Experience</h3>
-        <div id="experience">
-            <%= f.simple_fields_for :experiences do |experience| %>
-                <%= render 'experience_fields', f: experience %>
-            <% end %>
-            <div class="links">
-                <%= link_to_add_association 'add_experience', f, :experiences %>
+        <div class="jumbotron">
+            <div class="container"> 
+                <div id="experience">
+                    <%= f.simple_fields_for :experiences do |experience| %>
+                        <%= render 'experience_fields', f: experience %>
+                    <% end %>
+                    <div class="links">
+                        <%= link_to_add_association 'add_experience', f, :experiences %>
+                    </div>
+                </div>
             </div>
         </div>
 
         <h3>Projects</h3>
-        <div id="project">
-            <%= f.simple_fields_for :projects do |project| %>
-                <% render 'project_fields', f: project %>
-            <% end %>
-            <div class="links">
-                <%= link_to_add_association 'add_project', f, :projects %>
+        <div class="jumbotron">
+            <div class="container">
+                <div id="project">
+                    <%= f.simple_fields_for :projects do |project| %>
+                        <% render 'project_fields', f: project %>
+                    <% end %>
+                    <div class="links">
+                        <%= link_to_add_association 'add_project', f, :projects %>
+                    </div>
+                </div>
             </div>
         </div>
 
         <h3>Skills</h3>
-        <div id="skill">
-            <%= f.simple_fields_for :skills do |skill| %>
-                <% render 'skill_fields', f: skill %>
-            <% end %>
-            <div class="links">
-                <%= link_to_add_association 'add_skill', f, :skills %>
+        <div class="jumbotron">
+            <div class="container">
+                <div id="skill">
+                    <%= f.simple_fields_for :skills do |skill| %>
+                        <% render 'skill_fields', f: skill %>
+                    <% end %>
+                    <div class="links">
+                        <%= link_to_add_association 'add_skill', f, :skills %>
+                    </div>
+                </div>
             </div>
         </div>
         <br />
