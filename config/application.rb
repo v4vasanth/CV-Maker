@@ -22,5 +22,9 @@ module CVMaker
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    #config/application.rb
+    config.exceptions_app = self.routes
+
   end
 end
