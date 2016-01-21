@@ -53,12 +53,12 @@
     text-align: left;
  }
 
-#devise_login{
+#devise_sessions_new{
  	margin-top: 30%;
  	border-radius: 10px;
  }
 
-#devise_new_signup{
+#devise_registrations_new{
  	margin-top: 20%;
  	border-radius: 10px;
  }
@@ -67,6 +67,15 @@
     display: inline;
  }
 
+ #devise_registrations_edit{
+    margin-top: 5%;
+    border-radius: 10px;
+ }
+
  #edit_form{
     margin-top: 5%;
+ }
+
+ #user_basic_form{
+    border-radius: 10px;
  }
