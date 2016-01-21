@@ -21,7 +21,7 @@
 
 .center_div{
     margin: 0 auto;
-    width:80% /* value of your choice which suits your alignment */
+    width:100%;
 }
 
 /* flash */
@@ -51,4 +51,22 @@
     border-color: #d6e9c6;
     color: #468847;
     text-align: left;
+ }
+
+#devise_login{
+ 	margin-top: 30%;
+ 	border-radius: 10px;
+ }
+
+#devise_new_signup{
+ 	margin-top: 20%;
+ 	border-radius: 10px;
+ }
+
+ #badge_inline{
+    display: inline;
+ }
+
+ #edit_form{
+    margin-top: 5%;
  }
