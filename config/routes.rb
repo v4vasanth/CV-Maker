@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   # Overriding the devise controller with custom fields
   devise_for :users, :controllers => {:registrations => "registrations"}
 
+  resources :users do
+    resources :basics
+  end
+
   # Route to user's dashboard
   get '/:username/dashboard' => 'user#dashboard', as: 'user_dashboard'
 

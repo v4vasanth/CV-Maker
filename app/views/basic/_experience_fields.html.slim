@@ -1,0 +1,7 @@
+div class="nested-fields"
+	= f.input :company, placeholder: "Company Name"
+	= f.input :location, placeholder: "Company Location"
+	= f.input :duration, placeholder: "Duration : Jan 2015 - Nov 2015"
+	= f.input :role, placeholder: "Job Role"
+	= f.input :description, placeholder: "Job Description" 
+	= link_to_remove_association "Remove Experience", f 

@@ -1,0 +1,64 @@
+nav class="navbar navbar-default navbar-fixed-top"
+    div class="container-fluid"
+        div class="navbar-header"
+            a class="navbar-brand" href="#" CV Maker 
+
+        ul class="nav navbar-nav navbar-right"
+            li
+                = link_to("Dashboard", user_dashboard_path(username: current_user.username))
+            li 
+                = link_to('Logout', destroy_user_session_path, :method => :delete )
+
+div class="col-md-4 col-md-offset-4" id="edit_form"
+    
+    h3 Basic Information
+    = simple_form_for @basic, url: { action: 'create' } do |f|
+        div class="jumbotron" id="user_basic_form"
+            div class="container"
+                = f.input :full_name, placeholder: "Full Name"
+                = f.input :phone, placeholder: "Phone Number"
+                = f.input :linkedin, placeholder: "Linkedin URL" 
+                = f.input :twitter, placeholder: "twitter - @twitter" 
+                = f.input :skype, placeholder: "Skype Name" 
+                = f.input :personal_website, placeholder: "Personal Website URL"
+        
+        h3 Education
+        div class="jumbotron" id="user_basic_form"
+            div class="container"
+                div id="education"
+                    = f.simple_fields_for :educations do |education| 
+                        = render 'education_fields', f: education 
+                    div class="links"
+                        = link_to_add_association 'Add Education', f, :educations 
+                    
+        h3 Experience
+        div class="jumbotron" id="user_basic_form"
+            div class="container" 
+                div id="experience"
+                    = f.simple_fields_for :experiences do |experience| 
+                        = render 'experience_fields', f: experience 
+                    div class="links"
+                        = link_to_add_association 'Add Experience', f, :experiences 
+
+        h3 Projects
+        div class="jumbotron" id="user_basic_form"
+            div class="container"
+                div id="project"
+                    = f.simple_fields_for :projects do |project| 
+                        = render 'project_fields', f: project 
+                    div class="links"
+                        = link_to_add_association 'Add Project', f, :projects
+
+        h3 Skills
+        div class="jumbotron" id="user_basic_form"
+            div class="container"
+                div id="skill"
+                    = f.simple_fields_for :skills do |skill|
+                        = render 'skill_fields', f: skill
+                    div class="links"
+                        = link_to_add_association 'Add Skill', f, :skills
+                    
+        br
+        = f.button :submit, class: "btn btn-primary"
+        br
+        br

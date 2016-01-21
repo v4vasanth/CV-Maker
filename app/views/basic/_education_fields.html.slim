@@ -1,0 +1,7 @@
+div class="nested-fields"
+	= f.input :degree, placeholder: "What is your degree?"
+	= f.input :college, placeholder: "School / College / University"
+	= f.input :location, placeholder: "Location"
+	= f.input :yop, placeholder: "Year of Graduation"
+	= f.input :gpa, placeholder: "Percentage (%) / CGPA / GPA"
+	= link_to_remove_association "Remove Education", f 

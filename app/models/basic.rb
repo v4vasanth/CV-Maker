@@ -1,9 +1,9 @@
 class Basic < ActiveRecord::Base
 	belongs_to :user
-	has_many :educations
-   	has_many :experiences
-   	has_many :projects
-   	has_many :skills
+	has_many :educations, dependent: :destroy
+   	has_many :experiences, dependent: :destroy
+   	has_many :projects, dependent: :destroy
+   	has_many :skills, dependent: :destroy
    	accepts_nested_attributes_for :educations, reject_if: :all_blank, allow_destroy: true
    	accepts_nested_attributes_for :experiences, reject_if: :all_blank, allow_destroy: true
    	accepts_nested_attributes_for :projects, reject_if: :all_blank, allow_destroy: true

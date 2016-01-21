@@ -16,6 +16,7 @@ class UserController < ApplicationController
 				@status = false
 			else
 				@status = true
+				@user_status = current_user.basic
 			end
 		end
 	end

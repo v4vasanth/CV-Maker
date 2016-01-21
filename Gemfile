@@ -31,6 +31,7 @@ gem 'slim', '~> 3.0', '>= 3.0.6'
 gem 'autoprefixer-rails'
 gem 'bootstrap_form'
 gem 'devise-bootstrap-views'
+gem 'html2slim'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
